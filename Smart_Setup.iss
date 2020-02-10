@@ -11,7 +11,7 @@
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={8FAAE71F-D195-415A-9E96-B2970A687EE6}
+AppId={{8FAAE71F-D195-415A-9E96-B2970A687EE6}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -28,7 +28,7 @@ UsedUserAreasWarning=no
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 PrivilegesRequired=admin
 OutputDir=C:\Users\mauricios\OneDrive - Opty\Smart_Setup
-OutputBaseFilename=Setup_Smart_5.0
+OutputBaseFilename=Setup_Smart_HOB_1.0
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -46,12 +46,9 @@ Name: modifypath; Description: "Adicionar o diretório da aplicação nas variáveis
 Source: "{code:GetSmartIniPath}"; DestDir: "{app}"; Flags: external
 Source: "C:\Users\mauricios\OneDrive - Opty\Smart_Setup\Imagem\foxfont.ttf"; DestDir: "{fonts}"; FontInstall: "FoxFont"; Flags: onlyifdoesntexist uninsneveruninstall
 Source: "C:\Users\mauricios\OneDrive - Opty\Smart_Setup\Imagem\*"; DestDir: "{app}\Imagem"; Flags: ignoreversion
-Source: "\\S70-FS-001\Smart\03 - Smart Estrutura Padrao\Smart125\*"; DestDir: "{app}"; Components: principal\ssa; Flags: ignoreversion recursesubdirs createallsubdirs external
-Source: "\\s72-fs-001\smart\03 - Smart Estrutura padrao\Smart125\*"; DestDir: "{app}"; Components: principal\itb; Flags: ignoreversion recursesubdirs createallsubdirs external
-Source: "\\s73-ad-001\smart\03 - Smart Estrutura Padrao\Smart125\*"; DestDir: "{app}"; Components: principal\enp; Flags: ignoreversion recursesubdirs createallsubdirs external
-Source: "\\S70-FS-001\Smart\03 - Smart Estrutura Padrao\Smart60\*"; DestDir: "{app}"; Components: modulos\ssa; Flags: ignoreversion recursesubdirs createallsubdirs external
-Source: "\\s72-fs-001\Smart\03 - Smart Estrutura Padrao\Smart60\*"; DestDir: "{app}"; Components: modulos\itb; Flags: ignoreversion recursesubdirs createallsubdirs external
-Source: "\\s73-ad-001\Smart\03 - Smart Estrutura Padrao\Smart60\*"; DestDir: "{app}"; Components: modulos\enp; Flags: ignoreversion recursesubdirs createallsubdirs external
+Source: "\\S70-FS-001\Smart\03 - Smart Estrutura Padrao\Smart125\*"; DestDir: "{app}"; Components: principal\graca; Flags: ignoreversion recursesubdirs createallsubdirs external
+Source: "\\s72-fs-001\smart\03 - Smart Estrutura padrao\Smart125\*"; DestDir: "{app}"; Components: principal\imep; Flags: ignoreversion recursesubdirs createallsubdirs external
+Source: "\\S70-FS-001\Smart\03 - Smart Estrutura Padrao\Smart60\*"; DestDir: "{app}"; Components: modulos\graca; Flags: ignoreversion recursesubdirs createallsubdirs external
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Code]
@@ -121,18 +118,13 @@ Filename: "{app}\Pb12dk\64\sqlncli.msi"; Parameters: "/passive"; StatusMsg: "Ins
 Filename: "{app}\Imagem\ImageViewerFull2005Setup.exe"; Parameters: "/VERYSILENT"; Description: "Instalar o ImageViewer"; Flags: shellexec postinstall skipifsilent nowait
 
 [Components]
-Name: "principal"; Description: "Arquivos de programa essenciais"; Types: "salvador itabuna eunapolis custom"; Flags: fixed 
-Name: "principal\ssa"; Description: "Arquivos para DH Salvador"; Types: "salvador"; Flags: exclusive 
-Name: "principal\itb"; Description: "Arquivos para DH Itabuna"; Types: "itabuna"; Flags: exclusive 
-Name: "principal\enp"; Description: "Arquivos para DH Eunapolis"; Types: "eunapolis"; Flags: exclusive
-;Name: "principal\iof"; Description: "Arquivos para IOF"; Types: "iof"; 
+Name: "principal"; Description: "Arquivos de programa essenciais"; Types: "graca imep custom"; Flags: fixed 
+Name: "principal\graca"; Description: "Arquivos para HOB Graça"; Types: "graca"; Flags: exclusive 
+Name: "principal\imep"; Description: "Arquivos para HOB IMEP"; Types: "imep"; Flags: exclusive  
 Name: "modulos"; Description: "Modulos legados"; Types: "custom"
-Name: "modulos\ssa"; Description: "Modulos do Smart60 para Salvador"; Types: "custom"; Flags: exclusive 
-Name: "modulos\itb"; Description: "Modulos do Smart60 para Itabuna"; Types: "custom"; Flags: exclusive 
-Name: "modulos\enp"; Description: "Modulos do Smart60 para Eunapolis"; Types: "custom"; Flags: exclusive
+Name: "modulos\graca"; Description: "Modulos do Smart60 para HOB Graça"; Types: "custom"; Flags: exclusive
 
 [Types]
-Name: "itabuna"; Description: "Smart Itabuna"
-Name: "salvador"; Description: "Smart Salvador"
-Name: "eunapolis"; Description: "Smart Eunápolis"
+Name: "graca"; Description: "Smart HOB Graça"
+Name: "imep"; Description: "Smart HOB IMEP"
 Name: "custom"; Description: "Personalizado"; Flags: iscustom
