@@ -46,9 +46,9 @@ Name: modifypath; Description: "Adicionar o diretório da aplicação nas variáveis
 Source: "{code:GetSmartIniPath}"; DestDir: "{app}"; Flags: external
 Source: "C:\Users\mauricios\OneDrive - Opty\Smart_Setup\Imagem\foxfont.ttf"; DestDir: "{fonts}"; FontInstall: "FoxFont"; Flags: onlyifdoesntexist uninsneveruninstall
 Source: "C:\Users\mauricios\OneDrive - Opty\Smart_Setup\Imagem\*"; DestDir: "{app}\Imagem"; Flags: ignoreversion
-Source: "\\S70-FS-001\Smart\03 - Smart Estrutura Padrao\Smart125\*"; DestDir: "{app}"; Components: principal\graca; Flags: ignoreversion recursesubdirs createallsubdirs external
-Source: "\\s72-fs-001\smart\03 - Smart Estrutura padrao\Smart125\*"; DestDir: "{app}"; Components: principal\imep; Flags: ignoreversion recursesubdirs createallsubdirs external
-Source: "\\S70-FS-001\Smart\03 - Smart Estrutura Padrao\Smart60\*"; DestDir: "{app}"; Components: modulos\graca; Flags: ignoreversion recursesubdirs createallsubdirs external
+Source: "\\SRV-BAO\smart\03 - Smart Estrutura Padrao\Smart125\*"; DestDir: "{app}"; Components: principal\graca; Flags: ignoreversion recursesubdirs createallsubdirs external
+Source: "\\SRV-BAO\smart\03 - Smart Estrutura padrao\Smart125\*"; Excludes: "Aplic125\*"; DestDir: "{app}"; Components: principal\imep; Flags: ignoreversion recursesubdirs createallsubdirs external
+Source: "\\SRV-BAO\Smart\03 - Smart Estrutura Padrao\Smart60\*"; DestDir: "{app}"; Components: modulos\graca; Flags: ignoreversion recursesubdirs createallsubdirs external
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Code]
